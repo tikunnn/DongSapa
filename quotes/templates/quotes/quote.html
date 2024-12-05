@@ -1,0 +1,134 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tạo Dữ Liệu Mới</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+  </head>
+  <body>
+    <div class="container">
+      <h3>Form báo giá</h3>
+
+      <form method="POST">
+        {% csrf_token %}
+
+        <div class="form-sections">
+          <div class="form-section">
+            <h3>Thông tin Công ty</h3>
+            <div class="form-group">
+              <label for="id_quote_number">Số báo giá:</label>
+              {{ company_form.quote_number }}
+            </div>
+
+            <div class="form-group">
+              <label for="id_created_by">Người lập báo giá:</label>
+              {{ company_form.created_by }}
+            </div>
+
+            <div class="form-group">
+              <label for="id_team_leader">Trưởng nhóm:</label>
+              {{ company_form.team_leader }}
+            </div>
+
+            <div class="form-group">
+              <label for="id_sales_rep">Đại diện bán hàng:</label>
+              {{ company_form.sales_rep }}
+            </div>
+
+            <div class="form-group">
+              <label for="id_customer_source">Nguồn khách hàng:</label>
+              {{ company_form.customer_source }}
+            </div>
+
+            <div class="form-group">
+              <label for="id_customer_source_type"
+                >Loại nguồn khách hàng:</label
+              >
+              {{ company_form.customer_source_type }}
+            </div>
+
+            <div class="form-group">
+              <label for="id_quote_type">Loại báo giá:</label>
+              {{ company_form.quote_type }}
+            </div>
+          </div>
+
+          <div class="form-section">
+            <h3>Thông tin khách hàng</h3>
+            <div class="form-group">
+              <label for="id_company_name">Tên công ty:</label>
+              {{ customer_form.company_name }}
+            </div>
+
+            <div class="form-group">
+              <label for="id_contact_person">Người liên hệ:</label>
+              {{ customer_form.contact_person }}
+            </div>
+
+            <div class="form-group">
+              <label for="id_phone_number">Số điện thoại:</label>
+              {{ customer_form.phone_number }}
+            </div>
+
+            <div class="form-group">
+              <label for="id_address">Địa chỉ:</label>
+              {{ customer_form.address }}
+            </div>
+          </div>
+
+          <div class="form-section">
+            <h3>Thông tin hợp đồng</h3>
+            <div class="form-group">
+              <label for="id_project_name">Tên công trình:</label>
+              {{ contract_form.project_name }}
+            </div>
+
+            <div class="form-group">
+              <label for="id_bid_package">Gói thầu:</label>
+              {{ contract_form.bid_package }}
+            </div>
+
+            <div class="form-group">
+              <label for="id_project_address">Địa chỉ công trình:</label>
+              {{ contract_form.project_address }}
+            </div>
+
+            <div class="form-group">
+              <label for="id_construction_items">Mặt hàng thi công:</label>
+              {{ contract_form.construction_items }}
+            </div>
+
+            <div class="form-group">
+              <label for="id_brand_name">Tên thương hiệu:</label>
+              {{ contract_form.brand_name }}
+            </div>
+
+            <div class="form-group">
+              <label for="id_airCondition_type">Loại điều hòa:</label>
+              {{ contract_form.airCondition_type }}
+            </div>
+
+            <div class="form-group">
+              <label for="id_construction_type">Loại công trình:</label>
+              {{ contract_form.construction_type }}
+            </div>
+
+            <div class="form-group">
+              <label for="id_project_type">Loại dự án:</label>
+              {{ contract_form.project_type }}
+            </div>
+
+            <div class="form-group">
+              <label for="id_region">Khu vực:</label>
+              {{ contract_form.region }}
+            </div>
+          </div>
+        </div>
+
+        <button type="submit">Lưu</button>
+      </form>
+    </div>
+  </body>
+</html>
